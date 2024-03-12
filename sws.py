@@ -45,14 +45,8 @@ http_response_start = "HTTP/1.0"
 http_response_response_end = "\r\nConnection: "
 http_bad_request_response_end = " close\r\n\r\n"
 
-# Handles new line and forbidden char differences between Unix-like and Windows OS
-forbbidden_chars = "[/]"
+next_line_char = "\\r\\n|\\n" 
 
-next_line_char = "\\r\\n|\\n" #"\n\r|\n"
-'''if sys.platform.startswith('win'):
-    next_line_char = "\r\n"
-    forbbidden_chars = "[\\<\\>\\:\"\\\/\\|\\?\\*]"
-'''
 # Map of queues for outgoing messages, ensures that message is sent to the client end of socket that triggered it
 requests_map = {}
 
